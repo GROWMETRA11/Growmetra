@@ -1,5 +1,6 @@
 "use client"
 
+import Logo from "../../app/assets/logo.png"
 import { useState, useEffect, useRef } from "react"
 import Link from "next/link"
 import Image from "next/image"
@@ -127,19 +128,24 @@ export default function Header() {
   return (
     <header className="w-full">
       {/* Top Bar */}
-      <div className="bg-[#e9e9e9] border-t-4 border-[#4d8c40] py-3">
+      <div className="grid grid-cols-3 px-4">
+      <div className="bg-[#e9e9e9] border-t-4 border-[#4d8c40]"></div>
+      <div className="bg-[#e9e9e9] border-t-4 border-[#C5CE38]"></div>
+      <div className="bg-[#e9e9e9] border-t-4 border-[#EEC044]"></div>
+      </div>
+      <div className="bg-[#e9e9e9] py-3">
         <div className="container mx-auto px-4 flex flex-col lg:flex-row justify-between items-center">
           {/* Logo */}
           <div className="mb-4 lg:mb-0">
             <Link href="/" className="flex items-center">
               <Image
-                src="/placeholder.svg?height=60&width=60"
+                src= {Logo}
                 alt="GrowMetra Logo"
-                width={60}
+                width={140}
                 height={60}
-                className="mr-2"
+                className="mr-2 "
               />
-              <span className="text-[#4d8c40] text-2xl font-semibold">GrowMetra</span>
+             
             </Link>
           </div>
 
@@ -184,7 +190,7 @@ export default function Header() {
                   <Phone size={18} />
                 </div>
                 <div>
-                  <p className="text-xs text-gray-600">Call anytime</p>
+                  <p className="text-xs text-gray-500">Call anytime</p>
                   <p className="text-sm font-medium">07011194334</p>
                 </div>
               </div>
@@ -194,7 +200,7 @@ export default function Header() {
                   <Mail size={18} />
                 </div>
                 <div>
-                  <p className="text-xs text-gray-600">Send email</p>
+                  <p className="text-xs text-gray-500">Send email</p>
                   <p className="text-sm font-medium">growmetra@gmail.com</p>
                 </div>
               </div>
@@ -204,7 +210,7 @@ export default function Header() {
                   <MapPin size={18} />
                 </div>
                 <div>
-                  <p className="text-xs text-gray-600">No 5A, Bolajoko Oshun street</p>
+                  <p className="text-xs text-gray-500">No 5A, Bolajoko Oshun street</p>
                   <p className="text-sm font-medium">Ikeja, Lagos</p>
                 </div>
               </div>
