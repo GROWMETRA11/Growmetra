@@ -1,6 +1,6 @@
 "use client"
 
-import Logo from "../../app/assets/logo.png"
+// import Logo from "../../app/assets/logo.png"
 import { useState, useEffect, useRef } from "react"
 import Link from "next/link"
 import Image from "next/image"
@@ -17,6 +17,7 @@ import {
   Facebook,
   Instagram,
 } from "lucide-react"
+import Logo from "./logo"
 
 export default function Header() {
   const [isMenuOpen, setIsMenuOpen] = useState(false)
@@ -137,7 +138,7 @@ export default function Header() {
         <div className="container mx-auto px-4 flex flex-col lg:flex-row justify-between items-center">
           {/* Logo */}
           <div className="mb-4 lg:mb-0">
-            <Link href="/" className="flex items-center">
+            {/* <Link href="/" className="flex items-center">
               <Image
                 src= {Logo}
                 alt="GrowMetra Logo"
@@ -146,7 +147,8 @@ export default function Header() {
                 className="mr-2 "
               />
              
-            </Link>
+            </Link> */}
+            <Logo />
           </div>
 
           {/* Social and Contact Info */}
@@ -157,7 +159,7 @@ export default function Header() {
                 href="#"
                 className="w-10 h-10 rounded-full bg-white flex items-center justify-center hover:bg-[#4d8c40] hover:text-white transition-colors"
               >
-                <Twitter size={18} />
+                <Twitter size={18} className="fill-amber-800"/>
                 <span className="sr-only">Twitter</span>
               </Link>
               <Link

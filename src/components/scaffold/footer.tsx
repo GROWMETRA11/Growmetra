@@ -1,6 +1,7 @@
 import Link from "next/link";
 import Image from "next/image";
 import { Send } from "lucide-react";
+import Logo from "./logo";
 
 export default function Footer() {
   // Navigation links data
@@ -58,16 +59,7 @@ export default function Footer() {
           {/* Logo and Social Section */}
           <div className="space-y-6">
             <div className="flex items-center">
-              <Image
-                src="/placeholder.svg?height=50&width=50"
-                alt="GrowMetra Logo"
-                width={50}
-                height={50}
-                className="mr-2"
-              />
-              <span className="text-green-500 text-xl font-semibold">
-                GrowMetra
-              </span>
+              <Logo />
             </div>
 
             <h2 className="text-2xl font-light">
