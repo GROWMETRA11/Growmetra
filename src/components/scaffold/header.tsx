@@ -159,15 +159,17 @@ export default function Header() {
                 href="#"
                 className="w-10 h-10 rounded-full bg-white flex items-center justify-center hover:bg-[#4d8c40] hover:text-white transition-colors"
               >
-                <Twitter size={18} className="fill-amber-800"/>
+                <Twitter size={18} className="fill-black"/>
                 <span className="sr-only">Twitter</span>
               </Link>
               <Link
                 href="#"
                 className="w-10 h-10 rounded-full bg-white flex items-center justify-center hover:bg-[#4d8c40] hover:text-white transition-colors"
               >
-                <Facebook size={18} />
+                <div className="w-4 h-4 rounded-full bg-black flex items-center justify-center ">
+                <Facebook size={18} className="fill-white stroke-white"/>
                 <span className="sr-only">Facebook</span>
+                </div>
               </Link>
               <Link
                 href="#"
@@ -188,9 +190,8 @@ export default function Header() {
             {/* Contact Info */}
             <div className="hidden md:flex items-center gap-6">
               <div className="flex items-center gap-2">
-                <div className="w-10 h-10 rounded-full bg-[#4d8c40] text-white flex items-center justify-center">
-                  <Phone size={18} />
-                </div>
+                  <Phone className= "stroke-[#4d8c40]"size={25} />
+                
                 <div>
                   <p className="text-xs text-gray-500">Call anytime</p>
                   <p className="text-sm font-medium">07011194334</p>
@@ -198,9 +199,8 @@ export default function Header() {
               </div>
 
               <div className="flex items-center gap-2">
-                <div className="w-10 h-10 rounded-full bg-[#4d8c40] text-white flex items-center justify-center">
-                  <Mail size={18} />
-                </div>
+                  <Mail className= "stroke-[#4d8c40]" size={25} />
+                
                 <div>
                   <p className="text-xs text-gray-500">Send email</p>
                   <p className="text-sm font-medium">growmetra@gmail.com</p>
@@ -208,9 +208,8 @@ export default function Header() {
               </div>
 
               <div className="flex items-center gap-2">
-                <div className="w-10 h-10 rounded-full bg-[#4d8c40] text-white flex items-center justify-center">
-                  <MapPin size={18} />
-                </div>
+                  <MapPin className= "stroke-[#4d8c40]" size={25} />
+               
                 <div>
                   <p className="text-xs text-gray-500">No 5A, Bolajoko Oshun street</p>
                   <p className="text-sm font-medium">Ikeja, Lagos</p>
