@@ -1,6 +1,10 @@
 import Link from "next/link";
 import Image from "next/image";
 import { Send } from "lucide-react";
+import Logo from "./logo";
+import ExploreIcon from "./exploreIcon";
+import { Phone, Mail, MapPin } from "lucide-react";
+
 
 export default function Footer() {
   // Navigation links data
@@ -52,22 +56,13 @@ export default function Footer() {
   ];
 
   return (
-    <footer className="bg-[#1c1c1c] text-white py-16">
+    <footer className="bg-[#24231D] text-white py-16">
       <div className="container mx-auto px-4">
         <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-8">
           {/* Logo and Social Section */}
           <div className="space-y-6">
             <div className="flex items-center">
-              <Image
-                src="/placeholder.svg?height=50&width=50"
-                alt="GrowMetra Logo"
-                width={50}
-                height={50}
-                className="mr-2"
-              />
-              <span className="text-green-500 text-xl font-semibold">
-                GrowMetra
-              </span>
+              <Logo />
             </div>
 
             <h2 className="text-2xl font-light">
@@ -99,12 +94,17 @@ export default function Footer() {
           <div>
             <h3 className="text-lg font-semibold mb-6 relative">
               Explore
-              <span className="absolute -bottom-2 left-0 w-10 h-1 bg-green-500"></span>
+              <div className="flex gap-2 mt-2">
+              <div className="w-10 h-1 bg-green-500 rounded-2xl"></div>
+              <div className="w-1 h-1 bg-green-500 rounded-2xl"></div>
+              </div>
             </h3>
+            
             <ul className="space-y-3">
               {exploreLinks.map((link, index) => (
-                <li key={index} className="flex items-center">
-                  <span className="text-green-500 mr-2">▸</span>
+                <li key={index} className="flex items-center gap-3">
+                  <ExploreIcon
+                  width={12} />
                   <Link
                     href={link.href}
                     className="hover:text-green-500 transition-colors"
@@ -120,7 +120,10 @@ export default function Footer() {
           <div>
             <h3 className="text-lg font-semibold mb-6 relative">
               News
-              <span className="absolute -bottom-2 left-0 w-10 h-1 bg-green-500"></span>
+              <div className="flex gap-2 mt-2">
+              <div className="w-10 h-1 bg-green-500 rounded-2xl"></div>
+              <div className="w-1 h-1 bg-green-500 rounded-2xl"></div>
+              </div>
             </h3>
             <div className="space-y-6">
               {newsItems.map((item, index) => (
@@ -131,7 +134,7 @@ export default function Footer() {
                   >
                     {item.title}
                   </Link>
-                  <p className="text-green-500 text-sm">{item.date}</p>
+                  <p className="text-[#EEC044] text-sm">{item.date}</p>
                 </div>
               ))}
             </div>
@@ -141,35 +144,41 @@ export default function Footer() {
           <div>
             <h3 className="text-lg font-semibold mb-6 relative">
               Contact
-              <span className="absolute -bottom-2 left-0 w-10 h-1 bg-green-500"></span>
+              <div className="flex gap-2 mt-2">
+              <div className="w-10 h-1 bg-green-500 rounded-2xl"></div>
+              <div className="w-1 h-1 bg-green-500 rounded-2xl"></div>
+              </div>
             </h3>
             <div className="space-y-4">
-              <div className="flex items-start">
-                <span className="text-green-500 mr-2">📞</span>
-                <Link
-                  href="tel:07011194334"
-                  className="hover:text-green-500 transition-colors"
-                >
-                  07011194334
-                </Link>
-              </div>
-              <div className="flex items-start">
-                <span className="text-green-500 mr-2">✉️</span>
-                <Link
-                  href="mailto:needhelp@company.com"
-                  className="hover:text-green-500 transition-colors"
-                >
-                  needhelp@company.com
-                </Link>
-              </div>
-              <div className="flex items-start">
-                <span className="text-green-500 mr-2">📍</span>
-                <address className="not-italic">
-                  No 5A, Bolajoko Oshun street, Ikeja Lagos
-                </address>
-              </div>
+  <div className="flex items-start">
+    <Phone className="text-[#24231D] fill-[#EEC044] mr-2" />
+    <Link
+      href="tel:07011194334"
+      className="hover:text-green-500 transition-colors"
+    >
+      07011194334
+    </Link>
+  </div>
 
-              <form className="mt-6 flex">
+  <div className="flex items-start">
+    <Mail className="text-[#24231D] fill-[#EEC044] mr-2" />
+    <Link
+      href="mailto:needhelp@company.com"
+      className="hover:text-green-500 transition-colors"
+    >
+      needhelp@company.com
+    </Link>
+  </div>
+
+  <div className="flex items-start">
+    <MapPin className="text-[#EEC044] fill-[#EEC044] mr-2" />
+    <address className="not-italic">
+      No 5A, Bolajoko Oshun street, Ikeja Lagos
+    </address>
+  </div>
+
+
+              <form className="mt-6 flex rounded-2xl">
                 <input
                   type="email"
                   placeholder="Your Email Address"

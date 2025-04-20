@@ -1,5 +1,6 @@
 "use client"
 
+// import Logo from "../../app/assets/logo.png"
 import { useState, useEffect, useRef } from "react"
 import Link from "next/link"
 import Image from "next/image"
@@ -16,6 +17,7 @@ import {
   Facebook,
   Instagram,
 } from "lucide-react"
+import Logo from "./logo"
 
 export default function Header() {
   const [isMenuOpen, setIsMenuOpen] = useState(false)
@@ -127,20 +129,26 @@ export default function Header() {
   return (
     <header className="w-full">
       {/* Top Bar */}
-      <div className="bg-[#e9e9e9] border-t-4 border-[#4d8c40] py-3">
+      <div className="grid grid-cols-3 px-4">
+      <div className="bg-[#e9e9e9] border-t-4 border-[#4d8c40]"></div>
+      <div className="bg-[#e9e9e9] border-t-4 border-[#C5CE38]"></div>
+      <div className="bg-[#e9e9e9] border-t-4 border-[#EEC044]"></div>
+      </div>
+      <div className="bg-[#e9e9e9] py-3">
         <div className="container mx-auto px-4 flex flex-col lg:flex-row justify-between items-center">
           {/* Logo */}
           <div className="mb-4 lg:mb-0">
-            <Link href="/" className="flex items-center">
+            {/* <Link href="/" className="flex items-center">
               <Image
-                src="/placeholder.svg?height=60&width=60"
+                src= {Logo}
                 alt="GrowMetra Logo"
-                width={60}
+                width={140}
                 height={60}
-                className="mr-2"
+                className="mr-2 "
               />
-              <span className="text-[#4d8c40] text-2xl font-semibold">GrowMetra</span>
-            </Link>
+             
+            </Link> */}
+            <Logo />
           </div>
 
           {/* Social and Contact Info */}
@@ -151,15 +159,17 @@ export default function Header() {
                 href="#"
                 className="w-10 h-10 rounded-full bg-white flex items-center justify-center hover:bg-[#4d8c40] hover:text-white transition-colors"
               >
-                <Twitter size={18} />
+                <Twitter size={18} className="fill-black"/>
                 <span className="sr-only">Twitter</span>
               </Link>
               <Link
                 href="#"
                 className="w-10 h-10 rounded-full bg-white flex items-center justify-center hover:bg-[#4d8c40] hover:text-white transition-colors"
               >
-                <Facebook size={18} />
+                <div className="w-4 h-4 rounded-full bg-black flex items-center justify-center ">
+                <Facebook size={18} className="fill-white stroke-white"/>
                 <span className="sr-only">Facebook</span>
+                </div>
               </Link>
               <Link
                 href="#"
@@ -180,31 +190,28 @@ export default function Header() {
             {/* Contact Info */}
             <div className="hidden md:flex items-center gap-6">
               <div className="flex items-center gap-2">
-                <div className="w-10 h-10 rounded-full bg-[#4d8c40] text-white flex items-center justify-center">
-                  <Phone size={18} />
-                </div>
+                  <Phone className= "stroke-[#4d8c40]"size={25} />
+                
                 <div>
-                  <p className="text-xs text-gray-600">Call anytime</p>
+                  <p className="text-xs text-gray-500">Call anytime</p>
                   <p className="text-sm font-medium">07011194334</p>
                 </div>
               </div>
 
               <div className="flex items-center gap-2">
-                <div className="w-10 h-10 rounded-full bg-[#4d8c40] text-white flex items-center justify-center">
-                  <Mail size={18} />
-                </div>
+                  <Mail className= "stroke-[#4d8c40]" size={25} />
+                
                 <div>
-                  <p className="text-xs text-gray-600">Send email</p>
+                  <p className="text-xs text-gray-500">Send email</p>
                   <p className="text-sm font-medium">growmetra@gmail.com</p>
                 </div>
               </div>
 
               <div className="flex items-center gap-2">
-                <div className="w-10 h-10 rounded-full bg-[#4d8c40] text-white flex items-center justify-center">
-                  <MapPin size={18} />
-                </div>
+                  <MapPin className= "stroke-[#4d8c40]" size={25} />
+               
                 <div>
-                  <p className="text-xs text-gray-600">No 5A, Bolajoko Oshun street</p>
+                  <p className="text-xs text-gray-500">No 5A, Bolajoko Oshun street</p>
                   <p className="text-sm font-medium">Ikeja, Lagos</p>
                 </div>
               </div>
