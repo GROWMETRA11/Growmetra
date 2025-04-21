@@ -290,15 +290,10 @@ export default function Header() {
           <div className="p-4 border-b">
             <div className="flex justify-between items-center">
               <Link href="/" className="flex items-center">
-                <Image
-                  src="/placeholder.svg?height=40&width=40"
-                  alt="GrowMetra Logo"
-                  width={40}
-                  height={40}
-                  className="mr-2"
+                  <Logo
+                  width = {80}
                 />
-                <span className="text-[#4d8c40] text-lg font-semibold">GrowMetra</span>
-              </Link>
+                      </Link>
               <button
                 onClick={() => setIsMenuOpen(false)}
                 className="text-gray-500 hover:text-gray-700"
@@ -332,7 +327,7 @@ export default function Header() {
                 <li key={item.name}>
                   <div className="border-b border-gray-100">
                     <div
-                      className="flex justify-between items-center py-3 px-2 text-gray-700 hover:text-[#4d8c40]"
+                      className="flex justify-between items-center text-  py-3 px-2 text-gray-700 hover:text-[#4d8c40]"
                       onClick={() => toggleDropdown(item.name)}
                     >
                       <Link
