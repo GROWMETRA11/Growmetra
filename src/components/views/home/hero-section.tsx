@@ -82,25 +82,6 @@ export default function HeroSection() {
           </div>
         </div>
       </div>
-
-      {/* Next Section Placeholder */}
-      <div className="bg-white pt-24 pb-16">
-        <div className="container mx-auto px-4 md:px-6">
-          <h2 className="text-2xl md:text-3xl font-bold text-center text-gray-800 mb-8">
-            Our Featured Products
-          </h2>
-          <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-6">
-            {/* Product placeholders */}
-            {[1, 2, 3, 4].map((item) => (
-              <div key={item} className="bg-white rounded-lg shadow p-4">
-                <div className="aspect-square bg-gray-200 rounded-md mb-4"></div>
-                <h3 className="font-medium">Organic Product {item}</h3>
-                <p className="text-[#5CB85C] font-bold mt-2">$24.99</p>
-              </div>
-            ))}
-          </div>
-        </div>
-      </div>
     </div>
   );
 }
