@@ -1,21 +1,20 @@
-import Image from "next/image"
-import Link from "next/link"
-import { MapPin, Package, Truck } from 'lucide-react'
-import heroBg from "../../../../public/assets/home/hero-img.png"
+import Image from "next/image";
+import Link from "next/link";
+import { MapPin, Package, Truck } from "lucide-react";
+import heroBg from "../../../../public/assets/home/hero-img.png";
 
 export default function HeroSection() {
   return (
     <div className="relative">
       {/* Hero Background */}
-      <div className="relative h-[300px] md:h-[400px] lg:h-[500px] w-full overflow-hidden">
-        <Image
-          src={heroBg}
-          alt="Vineyard with grapes"
-          priority
-        />
-        
+      <div className=" overflow-hidden" style={{
+        background: `url(${heroBg.src}) no-repeat center / cover`
+      }}>
         {/* Content Overlay */}
-        <div className="absolute inset-0 bg-black/30">
+        <div
+          className=" inset-0 bg-black/30 py-24 md:py-32"
+         
+        >
           <div className="container mx-auto h-full px-4 md:px-6 flex flex-col justify-center">
             <div className="max-w-xl">
               <h1 className="mb-6">
@@ -26,9 +25,9 @@ export default function HeroSection() {
                   & Organic Market
                 </span>
               </h1>
-              
-              <Link 
-                href="/shop" 
+
+              <Link
+                href="/shop"
                 className="inline-block bg-[#5CB85C] hover:bg-[#4CAE4C] text-white font-medium py-3 px-6 rounded-md transition-colors"
               >
                 Shop Now
@@ -37,7 +36,7 @@ export default function HeroSection() {
           </div>
         </div>
       </div>
-      
+
       {/* Info Bar - Overlapping Section */}
       <div className="relative -mt-8 md:-mt-12 z-10 px-4 md:px-6 max-w-4xl mx-auto">
         <div className="container mx-auto">
@@ -53,7 +52,7 @@ export default function HeroSection() {
                   <p className="text-sm text-gray-600">Money Back Guarantee</p>
                 </div>
               </div>
-              
+
               {/* Free Shipping */}
               <div className="flex items-center gap-4">
                 <div className="flex-shrink-0 w-12 h-12 bg-[#F1F9F1] rounded-full flex items-center justify-center text-[#5CB85C]">
@@ -61,10 +60,12 @@ export default function HeroSection() {
                 </div>
                 <div>
                   <h3 className="font-semibold text-gray-800">Free Shipping</h3>
-                  <p className="text-sm text-gray-600">On All Orders Over $25,000</p>
+                  <p className="text-sm text-gray-600">
+                    On All Orders Over $25,000
+                  </p>
                 </div>
               </div>
-              
+
               {/* Store Locator */}
               <div className="flex items-center gap-4">
                 <div className="flex-shrink-0 w-12 h-12 bg-[#F1F9F1] rounded-full flex items-center justify-center text-[#5CB85C]">
@@ -72,14 +73,16 @@ export default function HeroSection() {
                 </div>
                 <div>
                   <h3 className="font-semibold text-gray-800">Store Locator</h3>
-                  <p className="text-sm text-gray-600">Find Your Nearest Store</p>
+                  <p className="text-sm text-gray-600">
+                    Find Your Nearest Store
+                  </p>
                 </div>
               </div>
             </div>
           </div>
         </div>
       </div>
-      
+
       {/* Next Section Placeholder */}
       <div className="bg-white pt-24 pb-16">
         <div className="container mx-auto px-4 md:px-6">
@@ -99,5 +102,5 @@ export default function HeroSection() {
         </div>
       </div>
     </div>
-  )
+  );
 }
