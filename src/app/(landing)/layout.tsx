@@ -9,7 +9,7 @@ function Layout({children}: PropsWithChildren) {
         {children}
         <Footer/>
     </div>
-  )
+  );
 }
 
 export default Layout
