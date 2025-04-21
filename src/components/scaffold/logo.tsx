@@ -1,5 +1,4 @@
 import Link from "next/link";
-import logo from "../../app/assets/logo.png";
 import newLogo from "@/app/assets/logoNew.png"
 import Image from "next/image";
 
