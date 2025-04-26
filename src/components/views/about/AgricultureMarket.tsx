@@ -2,6 +2,7 @@
 import React from 'react';
 import Image from 'next/image';
 import Link from 'next/link';
+import farmerImg from "@/../public/assets/about/about-01.webp.png"
 
 const AgricultureMarket: React.FC = () => {
   return (
@@ -12,7 +13,7 @@ const AgricultureMarket: React.FC = () => {
             <div className="relative">
               <div className="bg-green-500/20 absolute w-24 h-24 -left-6 -top-6"></div>
               <Image 
-                src="/images/farmer-image.jpg" 
+                src={farmerImg.src} 
                 alt="Farmers working" 
                 width={500} 
                 height={400} 
