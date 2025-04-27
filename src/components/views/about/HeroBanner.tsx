@@ -1,6 +1,7 @@
 // components/HeroBanner.tsx
 import React from 'react';
 import Link from 'next/link';
+import breadBg from "../../../../public/assets/breadBg.png"
 
 interface BreadcrumbItem {
   label: string;
@@ -9,16 +10,16 @@ interface BreadcrumbItem {
 
 interface HeroBannerProps {
   title: string;
-  backgroundImage: string;
+  backgroundImage?: string;
   breadcrumbs?: BreadcrumbItem[];
 }
 
 const HeroBanner: React.FC<HeroBannerProps> = ({ title, backgroundImage, breadcrumbs }) => {
   return (
     <div 
-      className="relative py-16 bg-cover bg-center text-white"
+      className="relative py-16 lg:py-32 bg-cover bg-center text-white"
       style={{ 
-        backgroundImage: `linear-gradient(rgba(0, 0, 0, 0.5), rgba(0, 0, 0, 0.5)), url(${backgroundImage})` 
+        backgroundImage: `linear-gradient(rgba(0, 0, 0, 0.5), rgba(0, 0, 0, 0.5)), url(${breadBg.src})` 
       }}
     >
       <div className="container mx-auto text-center px-4">

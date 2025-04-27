@@ -1,6 +1,8 @@
 import type React from "react";
 import Image from "next/image";
 import about1 from "../../../../public/assets/home/about1.png";
+import about2 from "../../../../public/assets/home/about2.png";
+import about3 from "../../../../public/assets/home/about3.png";
 
 // Define the service item type
 type ServiceItem = {
@@ -49,7 +51,7 @@ export default function PostHeroSection() {
       title: "Organic Products",
       description:
         "provides a dedicated platform for organic farmers to showcase their certified sustainable produce and connect with consumers seeking high-quality, eco-friendly agricultural options.",
-      image: about1.src,
+      image: about2.src,
       icon: (
         <svg
           xmlns="http://www.w3.org/2000/svg"
@@ -71,7 +73,7 @@ export default function PostHeroSection() {
       title: "Dairy Products",
       description:
         "facilitates the sale of dairy products like milk, cheese, and yogurt, enabling dairy farmers to expand their customer base and negotiate fair prices for their high-quality goods.",
-      image: about1.src,
+      image: about3.src,
       icon: (
         <svg
           xmlns="http://www.w3.org/2000/svg"
