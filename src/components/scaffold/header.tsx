@@ -58,48 +58,48 @@ export default function Header() {
     {
       name: "Home",
       path: "/",
-      hasDropdown: true,
-      dropdownItems: [
-        { name: "Home 1", path: "/" },
-        { name: "Home 2", path: "/home-2" },
-        { name: "Home 3", path: "/home-3" },
-      ],
+      // hasDropdown: true,
+      // dropdownItems: [
+      //   { name: "Home 1", path: "/" },
+      //   { name: "Home 2", path: "/home-2" },
+      //   { name: "Home 3", path: "/home-3" },
+      // ],
     },
     {
       name: "About",
       path: "/about",
       hasDropdown: false,
     },
-    {
-      name: "Services",
-      path: "/services",
-      hasDropdown: true,
-      dropdownItems: [
-        { name: "Service 1", path: "/services/service-1" },
-        { name: "Service 2", path: "/services/service-2" },
-        { name: "Service 3", path: "/services/service-3" },
-      ],
-    },
-    {
-      name: "Projects",
-      path: "/projects",
-      hasDropdown: true,
-      dropdownItems: [
-        { name: "Project 1", path: "/projects/project-1" },
-        { name: "Project 2", path: "/projects/project-2" },
-        { name: "Project 3", path: "/projects/project-3" },
-      ],
-    },
-    {
-      name: "News",
-      path: "/news",
-      hasDropdown: true,
-      dropdownItems: [
-        { name: "Latest News", path: "/news/latest" },
-        { name: "Press Releases", path: "/news/press" },
-        { name: "Blog", path: "/news/blog" },
-      ],
-    },
+    // {
+    //   name: "Services",
+    //   path: "/services",
+    //   hasDropdown: true,
+    //   dropdownItems: [
+    //     { name: "Service 1", path: "/services/service-1" },
+    //     { name: "Service 2", path: "/services/service-2" },
+    //     { name: "Service 3", path: "/services/service-3" },
+    //   ],
+    // },
+    // {
+    //   name: "Projects",
+    //   path: "/projects",
+    //   hasDropdown: true,
+    //   dropdownItems: [
+    //     { name: "Project 1", path: "/projects/project-1" },
+    //     { name: "Project 2", path: "/projects/project-2" },
+    //     { name: "Project 3", path: "/projects/project-3" },
+    //   ],
+    // },
+    // {
+    //   name: "News",
+    //   path: "/news",
+    //   hasDropdown: true,
+    //   dropdownItems: [
+    //     { name: "Latest News", path: "/news/latest" },
+    //     { name: "Press Releases", path: "/news/press" },
+    //     { name: "Blog", path: "/news/blog" },
+    //   ],
+    // },
     {
       name: "Shop",
       path: "/shop",
