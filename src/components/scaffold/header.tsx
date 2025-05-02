@@ -265,8 +265,20 @@ export default function Header() {
               ))}
             </nav>
 
+            {/*Auth Buttons */}
+           
+
+
             {/* Search and Cart */}
             <div className="flex items-center space-x-4">
+            <Link
+                href="/login"
+                className="inline-block text-black font-medium font mr-15 "
+              >Log In</Link>
+            <Link
+                href="/signup"
+                className="mr-15 inline-block bg-[#5CB85C] hover:bg-[#4CAE4C] text-white font-medium py-3 px-6 rounded-md transition-colors"
+              >Sign Up</Link>
               <button className="text-gray-700 hover:text-[#4d8c40]" aria-label="Search">
                 <Search size={20} />
               </button>
