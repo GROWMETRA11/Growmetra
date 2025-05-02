@@ -3,12 +3,14 @@
 import { useState } from "react"
 import { Eye, EyeOff } from "lucide-react"
 import Link from "next/link"
+import AuthHeader from "@/components/scaffold/headerAuth"
 
 import React from 'react'
 
 export default function page() {
     const [showPassword, setShowPassword] = useState(false)
   return (
+
     <div className="w-full max-w-md space-y-8">
     <h2 className="text-3xl font-bold text-[#1E293B] mb-8">Log In</h2>
 
