@@ -61,7 +61,7 @@ export default function HeroSection() {
                 <div>
                   <h3 className="font-semibold text-gray-800">Free Shipping</h3>
                   <p className="text-sm text-gray-600">
-                    On All Orders Over $25,000
+                    On All Orders Over ₦25,000
                   </p>
                 </div>
               </div>

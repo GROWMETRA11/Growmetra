@@ -57,6 +57,17 @@ export default function SignupPage() {
             )}
           </button>
         </div>
+        <div>
+          <select
+            name="option"
+            id=""
+            className="w-full px-4 py-3 rounded-lg border border-[#E2E8F0] focus:outline-none focus:ring-2 focus:ring-[#4ADE80]"
+          >
+            <option value="" disabled selected>Select an Option</option>
+            <option value="farmer">Farmer</option>
+            <option value="consumer">Consumer</option>
+          </select>
+        </div>
 
         <div className="flex items-start">
           <input
@@ -125,11 +136,11 @@ export default function SignupPage() {
           </button>
         </div>
         <div className="text-center mt-6">
-        <span className="text-gray-700">Already have an account? </span>
-        <Link href="/login" className="text-[#4ADE80] hover:underline">
-          Login
-        </Link>
-      </div>
+          <span className="text-gray-700">Already have an account? </span>
+          <Link href="/login" className="text-[#4ADE80] hover:underline">
+            Login
+          </Link>
+        </div>
       </form>
     </div>
   );
