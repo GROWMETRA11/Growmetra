@@ -96,7 +96,7 @@ export default function SignupPage() {
           Sign Up
         </button>
 
-        <div className="text-center">
+        {/* <div className="text-center">
           <span className="text-gray-500">Or</span>
         </div>
 
@@ -134,7 +134,7 @@ export default function SignupPage() {
             </svg>
             Sign in with Google
           </button>
-        </div>
+        </div> */}
         <div className="text-center mt-6">
           <span className="text-gray-700">Already have an account? </span>
           <Link href="/login" className="text-[#4ADE80] hover:underline">

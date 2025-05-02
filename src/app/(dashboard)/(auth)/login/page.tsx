@@ -49,7 +49,7 @@ export default function page() {
         </Link>
       </div>
 
-      <div className="text-center">
+      {/* <div className="text-center">
         <span className="text-gray-500">Or</span>
       </div>
 
@@ -87,7 +87,7 @@ export default function page() {
           </svg>
           Sign in with Google
         </button>
-      </div>
+      </div> */}
 
       <div className="text-center mt-6">
         <span className="text-gray-700">Not signed in before? </span>
