@@ -118,7 +118,7 @@ export default function DashboardLayout({
           <SidebarHeader>
             <div className="flex items-center gap-2 px-4 py-2">
               <Leaf className="h-6 w-6 text-green-600" />
-              <span className="text-xl font-bold">FarmConnect</span>
+              <span className="text-xl font-bold">GrowMetra</span>
             </div>
           </SidebarHeader>
           <SidebarContent>
