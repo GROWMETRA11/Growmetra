@@ -17,7 +17,7 @@ export default function AuthHeader() {
             <div className="bg-[#e9e9e9] py-3">
                 <div className="container mx-auto px-4 flex ">
                     {/* Logo */}
-                    <div className="mb-4 lg:mb-0">
+                    <div className="mt-4  lg:mb-0">
 
                         <Logo
                         height={100}

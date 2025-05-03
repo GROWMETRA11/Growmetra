@@ -1,9 +1,9 @@
-"use client"
+"use client";
 
 // import Logo from "../../app/assets/logo.png"
-import { useState, useEffect, useRef } from "react"
-import Link from "next/link"
-import Image from "next/image"
+import { useState, useEffect, useRef } from "react";
+import Link from "next/link";
+import Image from "next/image";
 import {
   Phone,
   Mail,
@@ -16,42 +16,44 @@ import {
   Twitter,
   Facebook,
   Instagram,
-} from "lucide-react"
-import Logo from "./logo"
+} from "lucide-react";
+import Logo from "./logo";
 
 export default function Header() {
-  const [isMenuOpen, setIsMenuOpen] = useState(false)
-  const [openDropdowns, setOpenDropdowns] = useState<Record<string, boolean>>({})
-  const [isMobile, setIsMobile] = useState(false)
-  const menuRef = useRef<HTMLDivElement>(null)
+  const [isMenuOpen, setIsMenuOpen] = useState(false);
+  const [openDropdowns, setOpenDropdowns] = useState<Record<string, boolean>>(
+    {}
+  );
+  const [isMobile, setIsMobile] = useState(false);
+  const menuRef = useRef<HTMLDivElement>(null);
 
   // Check if we're on mobile
   useEffect(() => {
     const checkIfMobile = () => {
-      setIsMobile(window.innerWidth < 1024)
-    }
+      setIsMobile(window.innerWidth < 1024);
+    };
 
-    checkIfMobile()
-    window.addEventListener("resize", checkIfMobile)
+    checkIfMobile();
+    window.addEventListener("resize", checkIfMobile);
 
     return () => {
-      window.removeEventListener("resize", checkIfMobile)
-    }
-  }, [])
+      window.removeEventListener("resize", checkIfMobile);
+    };
+  }, []);
 
   // Close menu when clicking outside
   useEffect(() => {
     const handleClickOutside = (event: MouseEvent) => {
       if (menuRef.current && !menuRef.current.contains(event.target as Node)) {
-        setIsMenuOpen(false)
+        setIsMenuOpen(false);
       }
-    }
+    };
 
-    document.addEventListener("mousedown", handleClickOutside)
+    document.addEventListener("mousedown", handleClickOutside);
     return () => {
-      document.removeEventListener("mousedown", handleClickOutside)
-    }
-  }, [])
+      document.removeEventListener("mousedown", handleClickOutside);
+    };
+  }, []);
 
   // Navigation data with dropdowns
   const navItems = [
@@ -115,24 +117,24 @@ export default function Header() {
       path: "/contact",
       hasDropdown: false,
     },
-  ]
+  ];
 
   const toggleDropdown = (name: string) => {
     if (isMobile) {
       setOpenDropdowns((prev) => ({
         ...prev,
         [name]: !prev[name],
-      }))
+      }));
     }
-  }
+  };
 
   return (
     <header className="w-full">
       {/* Top Bar */}
       <div className="grid grid-cols-3 px-4">
-      <div className="bg-[#e9e9e9] border-t-4 border-[#4d8c40]"></div>
-      <div className="bg-[#e9e9e9] border-t-4 border-[#C5CE38]"></div>
-      <div className="bg-[#e9e9e9] border-t-4 border-[#EEC044]"></div>
+        <div className="bg-[#e9e9e9] border-t-4 border-[#4d8c40]"></div>
+        <div className="bg-[#e9e9e9] border-t-4 border-[#C5CE38]"></div>
+        <div className="bg-[#e9e9e9] border-t-4 border-[#EEC044]"></div>
       </div>
       <div className="bg-[#e9e9e9] py-3">
         <div className="container mx-auto px-4 flex flex-col lg:flex-row justify-between items-center">
@@ -159,7 +161,7 @@ export default function Header() {
                 href="#"
                 className="w-10 h-10 rounded-full bg-white flex items-center justify-center hover:bg-[#4d8c40] hover:text-white transition-colors"
               >
-                <Twitter size={18} className="fill-black"/>
+                <Twitter size={18} className="fill-black" />
                 <span className="sr-only">Twitter</span>
               </Link>
               <Link
@@ -167,8 +169,8 @@ export default function Header() {
                 className="w-10 h-10 rounded-full bg-white flex items-center justify-center hover:bg-[#4d8c40] hover:text-white transition-colors"
               >
                 <div className="w-4 h-4 rounded-full bg-black flex items-center justify-center ">
-                <Facebook size={18} className="fill-white stroke-white"/>
-                <span className="sr-only">Facebook</span>
+                  <Facebook size={18} className="fill-white stroke-white" />
+                  <span className="sr-only">Facebook</span>
                 </div>
               </Link>
               <Link
@@ -190,8 +192,8 @@ export default function Header() {
             {/* Contact Info */}
             <div className="hidden md:flex items-center gap-6">
               <div className="flex items-center gap-2">
-                  <Phone className= "stroke-[#4d8c40]"size={25} />
-                
+                <Phone className="stroke-[#4d8c40]" size={25} />
+
                 <div>
                   <p className="text-xs text-gray-500">Call anytime</p>
                   <p className="text-sm font-medium">07011194334</p>
@@ -199,8 +201,8 @@ export default function Header() {
               </div>
 
               <div className="flex items-center gap-2">
-                  <Mail className= "stroke-[#4d8c40]" size={25} />
-                
+                <Mail className="stroke-[#4d8c40]" size={25} />
+
                 <div>
                   <p className="text-xs text-gray-500">Send email</p>
                   <p className="text-sm font-medium">growmetra@gmail.com</p>
@@ -208,10 +210,12 @@ export default function Header() {
               </div>
 
               <div className="flex items-center gap-2">
-                  <MapPin className= "stroke-[#4d8c40]" size={25} />
-               
+                <MapPin className="stroke-[#4d8c40]" size={25} />
+
                 <div>
-                  <p className="text-xs text-gray-500">No 5A, Bolajoko Oshun street</p>
+                  <p className="text-xs text-gray-500">
+                    No 5A, Bolajoko Oshun street
+                  </p>
                   <p className="text-sm font-medium">Ikeja, Lagos</p>
                 </div>
               </div>
@@ -242,7 +246,9 @@ export default function Header() {
                     className="flex items-center text-gray-700 hover:text-[#4d8c40] py-4 font-medium"
                   >
                     {item.name}
-                    {item.hasDropdown && <ChevronDown size={16} className="ml-1" />}
+                    {item.hasDropdown && (
+                      <ChevronDown size={16} className="ml-1" />
+                    )}
                   </Link>
 
                   {/* Desktop Dropdown */}
@@ -266,24 +272,32 @@ export default function Header() {
             </nav>
 
             {/*Auth Buttons */}
-           
-
 
             {/* Search and Cart */}
             <div className="flex items-center space-x-4">
-            <Link
+              <Link
                 href="/login"
                 className="hidden lg:inline-block text-black font-medium font mr-15 "
-              >Log In</Link>
-            <Link
+              >
+                Log In
+              </Link>
+              <Link
                 href="/signup"
                 className="hidden lg:inline-block mr-15  bg-[#5CB85C] hover:bg-[#4CAE4C] text-white font-medium py-3 px-6 rounded-md transition-colors"
-              >Sign Up</Link>
-              <button className="text-gray-700 hover:text-[#4d8c40]" aria-label="Search">
+              >
+                Sign Up
+              </Link>
+              <button
+                className="text-gray-700 hover:text-[#4d8c40]"
+                aria-label="Search"
+              >
                 <Search size={20} />
               </button>
               <div className="relative">
-                <button className="text-gray-700 hover:text-[#4d8c40]" aria-label="Shopping cart">
+                <button
+                  className="text-gray-700 hover:text-[#4d8c40]"
+                  aria-label="Shopping cart"
+                >
                   <ShoppingCart size={20} />
                   <span className="absolute -top-2 -right-2 bg-[#4d8c40] text-white text-xs rounded-full w-5 h-5 flex items-center justify-center">
                     3
@@ -297,15 +311,15 @@ export default function Header() {
         {/* Mobile Menu */}
         <div
           ref={menuRef}
-          className={`lg:hidden fixed inset-y-0 left-0 transform ${isMenuOpen ? "translate-x-0" : "-translate-x-full"} w-64 bg-white shadow-xl z-50 overflow-y-auto transition-transform duration-300 ease-in-out`}
+          className={`lg:hidden fixed inset-y-0 left-0 transform ${
+            isMenuOpen ? "translate-x-0" : "-translate-x-full"
+          } w-64 bg-white shadow-xl z-50 overflow-y-auto transition-transform duration-300 ease-in-out`}
         >
           <div className="p-4 border-b">
             <div className="flex justify-between items-center">
               <Link href="/" className="flex items-center">
-                  <Logo
-                  width = {80}
-                />
-                      </Link>
+                <Logo width={80} />
+              </Link>
               <button
                 onClick={() => setIsMenuOpen(false)}
                 className="text-gray-500 hover:text-gray-700"
@@ -344,12 +358,14 @@ export default function Header() {
                     >
                       <Link
                         href={item.hasDropdown ? "#" : item.path}
-                        className={`${item.hasDropdown ? "pointer-events-none" : ""} flex-grow`}
+                        className={`${
+                          item.hasDropdown ? "pointer-events-none" : ""
+                        } flex-grow`}
                         onClick={(e) => {
                           if (item.hasDropdown) {
-                            e.preventDefault()
+                            e.preventDefault();
                           } else {
-                            setIsMenuOpen(false)
+                            setIsMenuOpen(false);
                           }
                         }}
                       >
@@ -358,7 +374,9 @@ export default function Header() {
                       {item.hasDropdown && (
                         <ChevronDown
                           size={16}
-                          className={`transition-transform duration-200 ${openDropdowns[item.name] ? "rotate-180" : ""}`}
+                          className={`transition-transform duration-200 ${
+                            openDropdowns[item.name] ? "rotate-180" : ""
+                          }`}
                         />
                       )}
                     </div>
@@ -388,15 +406,19 @@ export default function Header() {
                 </li>
               ))}
             </ul>
-            <div className="flex gap-5 items-center justify-center">
-            <Link
+            <div className="flex mt-15 gap-5 items-center justify-center">
+              <Link
                 href="/login"
-                className="lg:hidden text-sm inline-block text-black font-medium "
-              >Log In</Link>
-            <Link
+                className="lg:hidden text-sm inline-block bg-white hover:bg-[#c4eec4] transition-colors text-black font-medium "
+              >
+                Log In
+              </Link>
+              <Link
                 href="/signup"
                 className="lg:hidden inline-block text-sm  bg-[#5CB85C] hover:bg-[#4CAE4C] text-white font-medium py-2 px-3 rounded-md transition-colors"
-              >Sign Up</Link>
+              >
+                Sign Up
+              </Link>
             </div>
           </nav>
 
@@ -421,9 +443,12 @@ export default function Header() {
 
         {/* Overlay */}
         {isMenuOpen && (
-          <div className="lg:hidden fixed inset-0 bg-black bg-opacity-50 z-40" onClick={() => setIsMenuOpen(false)} />
+          <div
+            className="lg:hidden fixed inset-0 bg-black bg-opacity-50 z-40"
+            onClick={() => setIsMenuOpen(false)}
+          />
         )}
       </div>
     </header>
-  )
+  );
 }
