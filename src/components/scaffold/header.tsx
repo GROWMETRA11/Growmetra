@@ -273,11 +273,11 @@ export default function Header() {
             <div className="flex items-center space-x-4">
             <Link
                 href="/login"
-                className="inline-block text-black font-medium font mr-15 "
+                className="hidden lg:inline-block text-black font-medium font mr-15 "
               >Log In</Link>
             <Link
                 href="/signup"
-                className="mr-15 inline-block bg-[#5CB85C] hover:bg-[#4CAE4C] text-white font-medium py-3 px-6 rounded-md transition-colors"
+                className="hidden lg:inline-block mr-15  bg-[#5CB85C] hover:bg-[#4CAE4C] text-white font-medium py-3 px-6 rounded-md transition-colors"
               >Sign Up</Link>
               <button className="text-gray-700 hover:text-[#4d8c40]" aria-label="Search">
                 <Search size={20} />
@@ -388,6 +388,16 @@ export default function Header() {
                 </li>
               ))}
             </ul>
+            <div className="flex gap-5 items-center justify-center">
+            <Link
+                href="/login"
+                className="lg:hidden text-sm inline-block text-black font-medium "
+              >Log In</Link>
+            <Link
+                href="/signup"
+                className="lg:hidden inline-block text-sm  bg-[#5CB85C] hover:bg-[#4CAE4C] text-white font-medium py-2 px-3 rounded-md transition-colors"
+              >Sign Up</Link>
+            </div>
           </nav>
 
           {/* Mobile Social Icons */}

@@ -3,11 +3,16 @@ import { Check } from "lucide-react";
 import Image from "next/image";
 import Logo from "@/components/scaffold/logo";
 import farmer from "../../../../public/assets/farmer.svg";
+import AuthHeader from "@/components/scaffold/headerAuth";
 function Layout({ children }: PropsWithChildren) {
   return (
+    <div>
+      <AuthHeader/>
+    
     <div className="flex min-h-screen w-full">
       {/* Green side - hidden on mobile and tablet */}
 
+      
       <div className="hidden lg:flex lg:w-1/2 bg-[#C8EAD1] flex-col justify-center relative ">
         <div className="max-w-md mx-auto">
           <div className=" mb-8">
@@ -54,6 +59,7 @@ function Layout({ children }: PropsWithChildren) {
       <div className="w-full lg:w-1/2 p-6 md:p-12 flex items-center justify-center">
         {children}
       </div>
+    </div>
     </div>
   );
 }
