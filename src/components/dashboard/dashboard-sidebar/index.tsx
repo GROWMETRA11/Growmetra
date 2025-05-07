@@ -45,6 +45,7 @@ import {
   DropdownMenuTrigger,
 } from "@/components/ui/dropdown-menu"
 import { Badge } from "@/components/ui/badge"
+import Logo from "@/components/scaffold/logo"
 
 const navigationItems = [
   {
@@ -78,11 +79,11 @@ const navigationItems = [
     icon: Wallet,
     href: "/dashboard/payments",
   },
-  {
-    title: "Calendar",
-    icon: Calendar,
-    href: "/dashboard/calendar",
-  },
+//   {
+//     title: "Calendar",
+//     icon: Calendar,
+//     href: "/dashboard/calendar",
+//   },
   {
     title: "Settings",
     icon: Settings,
@@ -116,10 +117,11 @@ export default function DashboardLayout({
       <div className="flex min-h-screen w-full">
         <Sidebar>
           <SidebarHeader>
-            <div className="flex items-center gap-2 px-4 py-2">
+            <Logo/>
+            {/* <div className="flex items-center gap-2 px-4 py-2">
               <Leaf className="h-6 w-6 text-green-600" />
               <span className="text-xl font-bold">GrowMetra</span>
-            </div>
+            </div> */}
           </SidebarHeader>
           <SidebarContent>
             <SidebarGroup>
