@@ -129,7 +129,7 @@ export default function OrdersPage() {
                         <TableCell>{order.customer}</TableCell>
                         <TableCell>{order.date}</TableCell>
                         <TableCell>{order.items}</TableCell>
-                        <TableCell>${order.total.toFixed(2)}</TableCell>
+                        <TableCell>₦{order.total.toFixed(2)}</TableCell>
                         <TableCell>
                           <Badge
                             variant={
@@ -196,7 +196,7 @@ export default function OrdersPage() {
                           <TableCell className="font-medium">{order.id}</TableCell>
                           <TableCell>{order.customer}</TableCell>
                           <TableCell>{order.date}</TableCell>
-                          <TableCell>${order.total.toFixed(2)}</TableCell>
+                          <TableCell>₦{order.total.toFixed(2)}</TableCell>
                           <TableCell className="text-right">
                             <Button size="sm" variant="outline">
                               <Eye className="mr-2 h-4 w-4" /> View
@@ -234,7 +234,7 @@ export default function OrdersPage() {
                           <TableCell className="font-medium">{order.id}</TableCell>
                           <TableCell>{order.customer}</TableCell>
                           <TableCell>{order.date}</TableCell>
-                          <TableCell>${order.total.toFixed(2)}</TableCell>
+                          <TableCell>₦{order.total.toFixed(2)}</TableCell>
                           <TableCell className="text-right">
                             <Button size="sm" variant="outline">
                               <Eye className="mr-2 h-4 w-4" /> View
@@ -272,7 +272,7 @@ export default function OrdersPage() {
                           <TableCell className="font-medium">{order.id}</TableCell>
                           <TableCell>{order.customer}</TableCell>
                           <TableCell>{order.date}</TableCell>
-                          <TableCell>${order.total.toFixed(2)}</TableCell>
+                          <TableCell>₦{order.total.toFixed(2)}</TableCell>
                           <TableCell className="text-right">
                             <Button size="sm" variant="outline">
                               <Eye className="mr-2 h-4 w-4" /> View
@@ -310,7 +310,7 @@ export default function OrdersPage() {
                           <TableCell className="font-medium">{order.id}</TableCell>
                           <TableCell>{order.customer}</TableCell>
                           <TableCell>{order.date}</TableCell>
-                          <TableCell>${order.total.toFixed(2)}</TableCell>
+                          <TableCell>₦{order.total.toFixed(2)}</TableCell>
                           <TableCell className="text-right">
                             <Button size="sm" variant="outline">
                               <Eye className="mr-2 h-4 w-4" /> View
