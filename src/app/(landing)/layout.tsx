@@ -1,4 +1,4 @@
-import Footer from '@/components/scaffold/footer'
+import Footer from '@/components/scaffold/Footer'
 import Header from '@/components/scaffold/header'
 import React, { PropsWithChildren } from 'react'
 

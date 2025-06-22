@@ -1,87 +1,65 @@
+import React from "react";
+import HeroImg from "../../../app/assets/HeroImg.svg";
+import TradeImg from "../../../app/assets/trade.svg";
 import Image from "next/image";
-import Link from "next/link";
-import { MapPin, Package, Truck } from "lucide-react";
-import heroBg from "../../../../public/assets/home/hero-img.png";
 
-export default function HeroSection() {
+const Hero = () => {
   return (
-    <div className="relative">
-      {/* Hero Background */}
-      <div className=" overflow-hidden" style={{
-        background: `url(${heroBg.src}) no-repeat center / cover`
-      }}>
-        {/* Content Overlay */}
-        <div
-          className=" inset-0 bg-black/30 py-24 md:py-32"
-         
-        >
-          <div className="container mx-auto h-full px-4 md:px-6 flex flex-col justify-center">
-            <div className="max-w-xl">
-              <h1 className="mb-6">
-                <span className="block font-['Covered_By_Your_Grace',_cursive] text-4xl md:text-5xl lg:text-6xl text-[#F9C74F] leading-tight">
-                  Agriculture
-                </span>
-                <span className="block font-bold text-4xl md:text-5xl lg:text-7xl text-white leading-tight">
-                  & Organic Market
-                </span>
-              </h1>
-
-              <Link
-                href="/shop"
-                className="inline-block bg-[#5CB85C] hover:bg-[#4CAE4C] text-white font-medium py-3 px-6 rounded-md transition-colors"
-              >
-                Shop Now
-              </Link>
-            </div>
+    <section className="w-full mx-auto">
+      <div className="max-w-[1320px] mx-auto p-5 lg:pt-[132px] pt-[90px] lg:flex lg:justify-between gap-[84px] lg:text-left text-center">
+        <div className="">
+          <h1 className="lg:text-[56px] text-[28px] leading-[42px] lg:leading-[84px] font-bold">
+            Connecting <span className="text-green-500">Farms</span> to{" "}
+            <span className="text-green-500">Markets</span>
+          </h1>
+          <p className="max-w-[586px] w-full px-5 lg:px-0 mx-auto lg:mx-0  mt-6 lg:text-lg text-base  font-medium lg:leading-6.75">
+            Empowering farmers and enabling buyers through direct connections.
+            Build transparency, drive trade, and foster growth across local and
+            national markets.
+          </p>
+          <div className="flex lg:flex-row flex-col gap-6 lg:justify-start justify-center items-center mt-8">
+            <button className="p-2 rounded-lg bg-green-500 text-white">
+              Get Started a a Farmer
+            </button>
+            <button className="p-2 rounded-lg bg-green-500 text-white">
+              Explore the Market place
+            </button>
+          </div>
+          <div className="mt-7 lg:flex lg:flex-row hidden  flex-col items-center justify-center lg:justify-start lg:gap-8 gap-2">
+            <span>
+              <h2 className="text-green-500 text-3xl  text-center font-bold leading-12">
+                1000+
+              </h2>
+              <p className="text-gray-400">Active Farmers</p>
+            </span>
+            <span>
+              <h2 className="text-green-500 text-3xl text-center font-bold leading-12">
+                500+
+              </h2>
+              <p className="text-gray-400">Verified Buyers</p>
+            </span>
+            <span>
+              <h2 className="text-green-500 text-3xl  text-center font-bold leading-12">
+                #2M+
+              </h2>
+              <p className="text-gray-400 text-base font-normal leading-6">
+                Trade Volume
+              </p>
+            </span>
           </div>
         </div>
-      </div>
 
-      {/* Info Bar - Overlapping Section */}
-      <div className="relative -mt-8 md:-mt-12 z-10 px-4 md:px-6 max-w-4xl mx-auto">
-        <div className="container mx-auto">
-          <div className="bg-white rounded-lg shadow-lg p-4 md:p-6">
-            <div className="grid grid-cols-1 md:grid-cols-3 gap-6">
-              {/* Return Policy */}
-              <div className="flex items-center gap-4">
-                <div className="flex-shrink-0 w-12 h-12 bg-[#F1F9F1] rounded-full flex items-center justify-center text-[#5CB85C]">
-                  <Package size={24} />
-                </div>
-                <div>
-                  <h3 className="font-semibold text-gray-800">Return Policy</h3>
-                  <p className="text-sm text-gray-600">Money Back Guarantee</p>
-                </div>
-              </div>
-
-              {/* Free Shipping */}
-              <div className="flex items-center gap-4">
-                <div className="flex-shrink-0 w-12 h-12 bg-[#F1F9F1] rounded-full flex items-center justify-center text-[#5CB85C]">
-                  <Truck size={24} />
-                </div>
-                <div>
-                  <h3 className="font-semibold text-gray-800">Free Shipping</h3>
-                  <p className="text-sm text-gray-600">
-                    On All Orders Over ₦25,000
-                  </p>
-                </div>
-              </div>
-
-              {/* Store Locator */}
-              <div className="flex items-center gap-4">
-                <div className="flex-shrink-0 w-12 h-12 bg-[#F1F9F1] rounded-full flex items-center justify-center text-[#5CB85C]">
-                  <MapPin size={24} />
-                </div>
-                <div>
-                  <h3 className="font-semibold text-gray-800">Store Locator</h3>
-                  <p className="text-sm text-gray-600">
-                    Find Your Nearest Store
-                  </p>
-                </div>
-              </div>
-            </div>
-          </div>
+        <div className="relative lg:w-[688.3px] mx-auto lg:mx-0 w-[332px] lg:min-h-[456px] pt-2 mt-2">
+          <Image className="rounded-xl mx-auto" src={HeroImg} alt="Hero Image" />
+          <Image
+            className=" absolute -bottom-20  left-[22px] lg:bottom-[-20px] lg:left-[-50px]"
+            src={TradeImg}
+            alt="Trade Image"
+          />
         </div>
       </div>
-    </div>
+    </section>
   );
-}
+};
+
+export default Hero;

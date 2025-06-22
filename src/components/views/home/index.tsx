@@ -1,14 +1,23 @@
 import React from 'react'
-import HeroSection from './hero-section'
-import PostHeroSection from './post-hero'
-import HotDealsSection from './hot-deals-section'
+import Hero from './hero-section'
+import About from './About'
+import Works from './Works'
+import Benefits from './Benefits'
+import Success from './Success'
+import Advert from './Advert'
+import ContactUs from './ContactUs'
+
 
 export default function HomeView() {
   return (
     <div>
-        <HeroSection/>
-        <PostHeroSection/>
-        <HotDealsSection/>
+        <Hero/>
+        <About/>
+        <Works/>
+        <Benefits/>
+        <Success/>
+        <Advert/>
+        <ContactUs/>
     </div>
   )
 }
