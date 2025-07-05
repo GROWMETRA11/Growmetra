@@ -1,7 +1,7 @@
 "use client"
 import React, { useState } from "react";
-import BenefitsImg from "../../../app/assets/FarmersBenefitsImg.svg";
-import BenefitsImg2 from "../../../app/assets/BuyersBenefits.svg";
+import BenefitsImg from "../../../app/assets/FarmersBenefitsImg.png";
+import BenefitsImg2 from "../../../app/assets/BuyersBenefitsImg.png";
 import Image from "next/image";
 
 const Benefits = () => {
@@ -89,7 +89,7 @@ const Benefits = () => {
                     </p>
                   </div>
                 )}
-                <Image src={BenefitsImg2} alt="" />
+                <Image className="w-[392px]" src={BenefitsImg2} alt="" />
               </div>
               <ul className="list-disc marker:text-yellow-500 ml-[37px] font-normal text-[16px] text-gray-600 leading-6 mt-8 mb-12">
                 {buyers}

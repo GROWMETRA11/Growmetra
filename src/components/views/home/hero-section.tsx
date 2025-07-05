@@ -1,5 +1,5 @@
 import React from "react";
-import HeroImg from "../../../app/assets/HeroImg.svg";
+import HeroImg from "../../../app/assets/HeroImg1.png";
 import TradeImg from "../../../app/assets/trade.svg";
 import Image from "next/image";
 

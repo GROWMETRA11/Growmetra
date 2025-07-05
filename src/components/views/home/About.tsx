@@ -1,5 +1,5 @@
 import React from "react";
-import AboutImg from "../../../app/assets/AboutImg.svg";
+import AboutImg from "../../../app/assets/AboutImg.png";
 import Image from "next/image";
 
 const About = () => {
@@ -16,7 +16,7 @@ const About = () => {
         </p>
       </div>
       <div className="flex lg:flex-row mx-3 text-center lg:text-left flex-col gap-7.5">
-        <Image src={AboutImg} alt="Nature" />
+        <Image className="w-[616px]" src={AboutImg} alt="Nature" />
         <div className="max-w-[545px] w-full mx-auto">
           <h2 className="font-bold text-xl leading-[22px] mb-2.5">
             Our Mission

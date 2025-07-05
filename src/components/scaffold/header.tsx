@@ -21,7 +21,7 @@ const Header = () => {
     <header className="w-full bg-white fixed z-50">
       <nav className="max-w-[1320px] w-full mx-auto bg-white">
         <div className="mt-0.5  flex justify-between items-center mr-4">
-          <Image src={Logo} alt="Growmetra Logo" />
+          <a href="/"><Image src={Logo} alt="Growmetra Logo" /></a>
           <ul>
             <a
               className="lg:flex gap-6 list-none text-4.5 font-medium leading-6.75 hidden"

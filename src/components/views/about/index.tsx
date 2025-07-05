@@ -1,28 +1,23 @@
 import React from "react";
-import HeroBanner from "./HeroBanner";
-import AgricultureMarket from "./AgricultureMarket";
-import VideoSection from "./VideoSection";
-import StatsCounter from "./StatsCounter";
-import Testimonials from "./Testimonials";
-import FarmersShowcase from "./FarmersShowcase";
+
+import AboutHero from "./AboutHero";
+import CoreValues from "./CoreValues";
+import EdgeAndWhoWeServe from "./EdgeAndWhoWeServe";
+import MisssionAndVission from "./MissionAndVission";
+import Story from "./Story";
+import Partnership from "./Partnership";
+import WhatWeOffer from "./WhatWeOffer";
 
 export default function AboutView() {
   return (
     <div>
-      <HeroBanner
-        title="About"
-        backgroundImage="/images/wheat-field-banner.jpg"
-        breadcrumbs={[
-          { label: "HOME", url: "/" },
-          { label: "ABOUT", url: "/about" },
-        ]}
-      />
-
-      <AgricultureMarket />
-      <VideoSection />
-      <StatsCounter />
-      <Testimonials />
-      <FarmersShowcase />
+           <AboutHero/>
+           <Story/>
+           <WhatWeOffer/>
+           <MisssionAndVission/>
+           <EdgeAndWhoWeServe/>
+           <CoreValues/>
+           <Partnership/>
     </div>
   );
 }

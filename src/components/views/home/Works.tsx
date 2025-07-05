@@ -1,6 +1,6 @@
 import React from "react";
-import BuyersImg from "../../../app/assets/BuyersImg.svg";
-import FarmersImg from "../../../app/assets/Farmers.svg";
+import BuyersImg from "../../../app/assets/BuyersImg.png";
+import FarmersImg from "../../../app/assets/FarmersImg.png";
 import Image from "next/image";
 
 const Works = () => {
