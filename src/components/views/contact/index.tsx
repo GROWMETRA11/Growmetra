@@ -3,7 +3,6 @@
 import type React from "react";
 
 import { useState } from "react";
-/* import HeroBanner from "../about/HeroBanner"; */
 
 export default function ContactView() {
   const [formData, setFormData] = useState({
@@ -27,14 +26,7 @@ export default function ContactView() {
 
   return (
     <div className="bg-gray-200 min-h-screen">
-     {/*  <HeroBanner
-        title="Contact"
-        backgroundImage="/images/wheat-field-banner.jpg"
-        breadcrumbs={[
-          { label: "HOME", url: "/" },
-          { label: "CONTACT", url: "/contact" },
-        ]}
-      /> */}
+    
       {/* Info Boxes Section */}
       <section className="container max-w-6xl mx-auto py-12 px-4 space-y-28">
         <div className="grid grid-cols-1 md:grid-cols-3 gap-6">
