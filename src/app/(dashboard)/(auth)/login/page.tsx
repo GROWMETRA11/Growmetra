@@ -6,18 +6,38 @@ import Link from "next/link"
 import AuthHeader from "@/components/scaffold/headerAuth"
 
 import React from 'react'
+import { AuthApi } from "@/app/utils"
+import { useRouter } from "next/navigation"
 
 export default function page() {
     const [showPassword, setShowPassword] = useState(false)
-  return (
+    const [email,setEmail] = useState("")
+    const [password,setPassword] = useState("")
+    const router = useRouter()
 
+   async function handleSubmit(e: React.FormEvent<HTMLFormElement>) {
+      e.preventDefault()
+  
+      try{
+        const response = await AuthApi.login(
+          email, password
+        )
+       router.push("/dashboard")
+        console.log(response)
+       }
+       catch(error){
+        console.error(error)
+       }
+    }
+
+  return (
     <div className="w-full max-w-md space-y-8">
     <h2 className="text-3xl font-bold text-[#1E293B] mb-8">Log In</h2>
 
-    <form className="space-y-6">
+    <form className="space-y-6" onSubmit={handleSubmit}>
       <div>
         <input
-          type="email"
+          type="email" value={email} onChange={(e) => setEmail(e.target.value)}
           placeholder="Email address"
           className="w-full px-4 py-3 rounded-lg border border-[#E2E8F0] focus:outline-none focus:ring-2 focus:ring-[#4ADE80]"
         />
@@ -25,7 +45,7 @@ export default function page() {
 
       <div className="relative">
         <input
-          type={showPassword ? "text" : "password"}
+          type={showPassword ? "text" : "password"} value={password} onChange={(e) => setPassword(e.target.value)}
           placeholder="Password"
           className="w-full px-4 py-3 rounded-lg border border-[#E2E8F0] focus:outline-none focus:ring-2 focus:ring-[#4ADE80]"
         />

@@ -56,10 +56,10 @@ axiosInstance.interceptors.response.use(
 
      // Check for 401 Unauthorized
     if (error.response.status === 401) {
-       const loginPageUrl = "/en/login"; 
-      if (typeof window !== "undefined") {
-        window.location.href = loginPageUrl; 
-      }
+      //  const loginPageUrl = "/en/login"; 
+      // if (typeof window !== "undefined") {
+      //   window.location.href = loginPageUrl; 
+      // }
       throw new Error(
         error.response.data.message ||
           "Unauthorized access. Please log in again."
