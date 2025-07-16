@@ -5,6 +5,7 @@ import { Eye, EyeOff } from "lucide-react";
 import Link from "next/link";
 import { AuthApi } from "@/app/utils";
 import { useRouter } from "next/navigation";
+import Otp from "@/components/views/Otp";
 
 export default function SignupPage() {
   const [showPassword, setShowPassword] = useState(false);
@@ -14,7 +15,9 @@ export default function SignupPage() {
   const [email, setEmail] = useState("");
   const [password, setPassword] = useState("");
   const [role, setRole] = useState("");
+  const [OtpScreen,setOtpScreen] = useState(false);
   const router = useRouter()
+  
 
   const handleSubmit = async (e: React.FormEvent<HTMLFormElement>) => {
   e.preventDefault();
@@ -22,7 +25,9 @@ export default function SignupPage() {
   const response =await AuthApi.register(
     {  email, password,firstName,lastName, role, }
   )
- router.push("/dashboard")
+ // router.push("/dashboard")
+ setOtpScreen(true)
+ setAcceptTerms(true)
   console.log(response)
  }
  catch(error){
@@ -104,7 +109,7 @@ export default function SignupPage() {
         </div>
 
         <div className="flex items-start">
-          <input
+           <input
             type="checkbox"
             id="terms"
             checked={acceptTerms}
@@ -123,9 +128,9 @@ export default function SignupPage() {
           </label>
         </div>
 
-        <button
+        <button disabled = {!acceptTerms}
           type="submit"
-          className="w-full bg-[#4ADE80] text-white py-3 rounded-lg font-medium hover:bg-[#22C55E] transition-colors"
+          className="w-full bg-[#4ADE80] disabled:opacity-45 cursor-pointer disabled:cursor-not-allowed text-white py-3 rounded-lg font-medium hover:bg-[#22C55E] transition-colors"
         >
           Sign Up
         </button>
@@ -137,6 +142,7 @@ export default function SignupPage() {
           </Link>
         </div>
       </form>
+      {OtpScreen && <Otp/>}
     </div>
   );
 }

@@ -6,14 +6,13 @@ import Benefits from './Benefits'
 import Success from './Success'
 import Advert from './Advert'
 import ContactUs from './ContactUs'
-import Otp from '@/components/Otp'
+import Otp from '@/components/views/Otp'
 
 
 export default function HomeView() {
   return (
     <div>
         <Hero/>
-        <Otp/>
         <About/>
         <Works/>
         <Benefits/>
