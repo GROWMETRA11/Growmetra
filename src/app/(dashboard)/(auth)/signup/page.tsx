@@ -142,7 +142,7 @@ export default function SignupPage() {
           </Link>
         </div>
       </form>
-      {OtpScreen && <Otp/>}
+      {OtpScreen && <Otp email={email} />}
     </div>
   );
 }

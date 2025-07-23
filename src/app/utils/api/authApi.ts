@@ -30,4 +30,15 @@ interface UserRegistrationData {
       throw error;
     }
   };
+  
+  export const verifyOTP = async (email:string, otp:string) => {
+    try {
+      const response = await axios$.post("/auth/verify-email/",  {
+        email,otp
+      } );
+      return response;
+    } catch (error) {
+      throw error;
+    }
+  };
  
