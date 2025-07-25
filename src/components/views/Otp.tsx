@@ -6,6 +6,7 @@ import OtpImage from "../../app/assets/OtpFrame 2147227444.svg";
 import ChangeOtp from "../../app/assets/elements.svg";
 import { AuthApi } from "@/app/utils";
 import { useRouter } from "next/navigation";
+import { useToast } from "../toast/ToastContext";
 
 interface OtpProps {
   email: string;
@@ -18,6 +19,7 @@ const Otp = ({ email }: OtpProps) => {
   const inputRefs = useRef<(HTMLInputElement | null)[]>([]);
   const [otp, setOtp] = useState<string[]>(new Array(6).fill(""));
 const router=useRouter()
+const { showToast } = useToast();
   const handleChange = async(index: number, value: string) => {
     if (!/^[0-9]?$/.test(value)) return;
 
@@ -33,11 +35,14 @@ const router=useRouter()
       const otpCode = newOtp.join("");
 
 setIsVerifying(true)
-      try{
-await AuthApi.verifyOTP(email,otpCode)
+try{
+  await AuthApi.verifyOTP(email,otpCode)
+  
+  showToast("Successful!",'success')
 router.push('/dashboard')
       }
-      catch(error){
+      catch(error:any){
+         showToast(error.message || "Error, try again ",'error')
 
       }
       finally{

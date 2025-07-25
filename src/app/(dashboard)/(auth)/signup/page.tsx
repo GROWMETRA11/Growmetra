@@ -6,6 +6,7 @@ import Link from "next/link";
 import { AuthApi } from "@/app/utils";
 import { useRouter } from "next/navigation";
 import Otp from "@/components/views/Otp";
+import { useToast } from "@/components/toast/ToastContext";
 
 export default function SignupPage() {
   const [showPassword, setShowPassword] = useState(false);
@@ -16,11 +17,13 @@ export default function SignupPage() {
   const [password, setPassword] = useState("");
   const [role, setRole] = useState("");
   const [OtpScreen,setOtpScreen] = useState(false);
+  const [loading,setLoading] = useState(false);
   const router = useRouter()
-  
+  const { showToast } = useToast();
 
   const handleSubmit = async (e: React.FormEvent<HTMLFormElement>) => {
   e.preventDefault();
+  setLoading(true)
  try{
   const response =await AuthApi.register(
     {  email, password,firstName,lastName, role, }
@@ -30,8 +33,13 @@ export default function SignupPage() {
  setAcceptTerms(true)
   console.log(response)
  }
- catch(error){
+  catch(error:any){
+         showToast(error.message || "Error, try again ",'error')
+
   console.error(error)
+ }
+ finally{
+  setLoading(false)
  }
     
   };
@@ -128,11 +136,11 @@ export default function SignupPage() {
           </label>
         </div>
 
-        <button disabled = {!acceptTerms}
+        <button disabled = {!acceptTerms ||loading}
           type="submit"
           className="w-full bg-[#4ADE80] disabled:opacity-45 cursor-pointer disabled:cursor-not-allowed text-white py-3 rounded-lg font-medium hover:bg-[#22C55E] transition-colors"
         >
-          Sign Up
+          {loading?"Loading...":"Sign Up"}
         </button>
 
         <div className="text-center mt-6">

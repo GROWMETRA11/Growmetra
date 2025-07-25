@@ -8,25 +8,33 @@ import AuthHeader from "@/components/scaffold/headerAuth"
 import React from 'react'
 import { AuthApi } from "@/app/utils"
 import { useRouter } from "next/navigation"
+import { useToast } from "@/components/toast/ToastContext"
 
 export default function page() {
     const [showPassword, setShowPassword] = useState(false)
+    const [loading, setLoading] = useState(false)
     const [email,setEmail] = useState("")
     const [password,setPassword] = useState("")
     const router = useRouter()
+    const { showToast } = useToast();
 
    async function handleSubmit(e: React.FormEvent<HTMLFormElement>) {
       e.preventDefault()
-  
+  setLoading(true)
       try{
         const response = await AuthApi.login(
           email, password
         )
-       router.push("/dashboard")
+        showToast("Login successfull!",'success')
+        router.push("/dashboard")
         console.log(response)
+      }
+      catch(error:any){
+         showToast(error.message || "Error, try again ",'error')
+      
        }
-       catch(error){
-        console.error(error)
+       finally{
+        setLoading(false)
        }
     }
 
@@ -59,10 +67,11 @@ export default function page() {
       </div>
 
       <button
+      disabled={loading}
         type="submit"
         className="w-full bg-[#4ADE80] text-white py-3 rounded-lg font-medium hover:bg-[#22C55E] transition-colors"
       >
-        Log in
+       {loading?"Loading ...":"Log in"}
       </button>
 
       <div className="text-center">
